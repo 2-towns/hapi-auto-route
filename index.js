@@ -13,7 +13,7 @@ exports.plugin = {
         let prefixes = [];
 
         const files = await AutoRoute.getFiles(opts.routes_dir, opts.pattern);
-        let routes = AutoRoute.getRoutes(files);
+        let routes = await AutoRoute.getRoutes(files);
 
         if (opts.use_prefix) {
             prefixes = AutoRoute.getPrefixes(files, Path.resolve(opts.routes_dir));
